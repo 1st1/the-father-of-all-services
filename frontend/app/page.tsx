@@ -9,7 +9,8 @@ export default function Home() {
   async function fetchTime() {
     setLoading(true);
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+      const host = process.env.NEXT_PUBLIC_API_URL;
+      const apiUrl = host ? `https://${host}` : "http://localhost:8000";
       const res = await fetch(`${apiUrl}/api/time`);
       const data = await res.json();
       setTime(data.formatted);

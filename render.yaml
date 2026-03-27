@@ -22,4 +22,4 @@ services:
         fromService:
           name: api
           type: web
-          property: hostURL
+          property: host
